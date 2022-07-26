@@ -1,4 +1,5 @@
-# Puppy Image Generator
+# VKS Coding Challenge
+## Puppy Image Generator
 
 Imagine you’re new to the company and this is the first project you’ve been assigned. Due to COVID-19, morale has been down and the management team thinks it would help to have a website employees could access to help brighten their day. They’ve come up with the genius idea of allowing the employees to generate random dog and puppy pictures. A little research has shown that there is a public API that can achieve that exact goal. They’ve also found a starter template for a React project that they’ve been able to send you. Now it’s up to you to set up a proper integration between the two.
 
@@ -36,3 +37,10 @@ The HTML img element is, by default, hidden. Make sure your function makes it vi
 This is where all the calls to the Dog API should take place. This file should be populated with endpoints that the frontend can access. Every endpoint needs to use the proper method (GET, POST, PATCH, etc.) and should return the proper data to the frontend. There should also be some form of error handling in the event of an incorrect request.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Further Instructions
+
+1. You can modify and use any of the pre-existing code to achieve your goal.
+2. Please do not spend more than 1-2h on this project and write notes about your solutions and/or thought process :) It is okay if you were unable to complete it.
+3. For simplicity it would be best you fork, clone this repository, and then push your final work as a pull request to this repository. Or alternatively send us a link to your repository on github.
+4. If you ever have any questions, feel free to email us.
