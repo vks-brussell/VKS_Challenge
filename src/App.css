@@ -1,0 +1,42 @@
+.navbar {
+  background-color: #000 !important;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-button {
+  color: #fff !important;
+}
+
+.header_logo {
+  max-width: 200px;
+  width: auto;
+  padding: 10px 0;
+}
+
+.container {
+  margin: 110px auto 0 auto;
+  text-align: center;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .button {
+  max-width: 200px;
+  margin-bottom: 30px;
+}
+
+.container .img-container.hidden {
+  display: none;
+}
+
+.select {
+  margin-bottom: 30px;
+  width: 500px;
+}
