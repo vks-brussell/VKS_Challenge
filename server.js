@@ -8,10 +8,21 @@ app.use(cors());
 app.use(bodyParser.json());
 
 //Create your endpoints HERE
-app.get("https://dog.ceo/api/breeds/image/random")
-app.get("https://dog.ceo/api/breed/hound/images")
-app.get("https://dog.ceo/api/breeds/list/all")
+const generateImage = async (e) => {
+const id = e.target.value
+const { data } = await axios(`https://dog.ceo/api/breed/${id}/images`);
+console.log(data.message)
+}
 
+
+
+
+//get random image
+app.get("https://dog.ceo/api/breeds/image/random")
+//get all breeds
+app.get("https://dog.ceo/api/breeds/list/all")
+//get images by breed
+app.get(`/api/breed/:id/images`, generateImage)
 
 
 

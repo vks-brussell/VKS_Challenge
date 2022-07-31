@@ -24,11 +24,11 @@ const ImageGenerator = () => {
     setLoading(true)
     const { data } = await axios("https://dog.ceo/api/breeds/list/all");
     const array = Object.keys(data.message);
-    console.log(data.message)
+
       //set the image to the data
       setBreeds(array);
       setLoading(false)
-      console.log(array)
+
       
       
   }
@@ -36,12 +36,13 @@ const ImageGenerator = () => {
 
   const generateImage = async (e) => {
     //Generate the image HERE
-    const chosenBreed = e.target.value
-    const { data } = await axios(`https://dog.ceo/api/breed/${chosenBreed}/images`);
+    const id = e.target.value
+    const { data } = await axios(`https://dog.ceo/api/breed/${id}/images`);
+    // tried to use the following code to connect to backend 
+    // const { data } = await axios.get(`/api/breed/${id}/images`)
       //set the image to the data
       setImages(data.message);
       console.log('Generate an image');
-    console.log(data.message)
 
   };
 
@@ -60,7 +61,6 @@ const ImageGenerator = () => {
           {breeds?.map((breed) => {
 return (
 <>
-{/* <option value=''>Select a breed</option> */}
 <option value="none" selected disabled hidden>Select a breed</option>
 <option key={breed} value={breed}>{breed}</option>
 </>
@@ -72,7 +72,9 @@ return (
 
 <>
 { image ? (
+  // rendering conditionally the images
   <>
+  
         <img
           src={image}
           alt='Random dog image'

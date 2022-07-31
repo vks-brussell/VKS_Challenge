@@ -11,6 +11,7 @@ import Button from '@material-ui/core/Button';
 
 const ImageGenerator = () => {
  
+  //declaring state
 const [image, setImage] =  useState();
 
  const generateImage = async () => {
@@ -23,7 +24,6 @@ const [image, setImage] =  useState();
       setImage(data.message);
   
     console.log('Generate an image');
-    console.log(data.message)
   };
 
     return (
@@ -39,6 +39,7 @@ const [image, setImage] =  useState();
         </Button>
     
       {image ? (
+        // rendering conditionally the image
         <>
              <img
           src={image}
