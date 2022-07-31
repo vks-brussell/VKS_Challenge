@@ -1,33 +1,64 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import axios from 'axios';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Button from '@material-ui/core/Button';
 
-export default class ImageGenerator extends Component {
-  generateImage = async () => {
-    //Generate the image HERE
+
+
+
+//changed component to arrow function 
+
+const ImageGenerator = () => {
+ 
+const [image, setImage] =  useState();
+
+ const generateImage = async () => {
+
+
+    //Generate the image 
+    
+      const { data } = await axios("https://dog.ceo/api/breeds/image/random");
+      //set the image to the data
+      setImage(data.message);
+  
     console.log('Generate an image');
+    console.log(data.message)
   };
-  render() {
+
     return (
       <div className='container'>
         <CssBaseline />
         <h2>Click the button to generate a new picture</h2>
         <Button
           variant='contained'
-          onClick={this.generateImage}
+          onClick={generateImage}
           className='button'
         >
           Click Me!
         </Button>
+    
+      {image ? (
+        <>
+             <img
+          src={image}
+          alt='Random dog image'
+          id='imgContainer'
+        />
+
+        </>
+      ) : (
+        <>
         <img
-          src=''
+          src={image}
           alt='Random dog image'
           className='img-container hidden'
           id='imgContainer'
         />
+        </>
+      )}
       </div>
     );
   }
-}
+// }
+export default ImageGenerator
